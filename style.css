@@ -1,0 +1,245 @@
+/* ========================= RESET & GLOBAL ========================= */
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: #fafafa;
+  padding: 20px;
+  color: #222;
+}
+
+/* ========================= HEADER / HERO ========================= */
+.hero {
+  text-align: center;
+  margin-bottom: 16px;
+}
+
+.hero h1 {
+  font-size: 56px; /* 2x dari 28px */
+  margin-bottom: 12px;
+}
+
+.hero-sub {
+  font-size: 28px; /* 2x dari 14px */
+  color: #666;
+}
+
+/* ========================= TOOLBAR ========================= */
+.toolbar {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 16px;
+}
+
+#search,
+#sortHarga {
+  padding: 24px; /* 2x dari 12px - tinggi input 2x lebih besar */
+  font-size: 28px; /* 2x dari 14px - teks 2x lebih besar */
+  border-radius: 8px;
+  border: 1px solid #ccc;
+}
+
+/* Kurangin lebar search box jadi 60% (dikurangin 40%) */
+#search {
+  flex: 10 10 70%; /* Dikurangin 40% dari lebar penuh */
+}
+
+/* ========================= GRID PRODUK (2 KOLOM UNTUK SEMUA DEVICE) ========================= */
+#produk-list {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 16px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* ========================= CARD PRODUK ========================= */
+.produk {
+  background: #fff;
+  border: 1px solid #e5e5e5;
+  border-radius: 12px;
+  padding: 12px;
+  display: flex;
+  flex-direction: column;
+}
+
+.produk img {
+  width: 100%;
+  height: 250px;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+.produk h3 {
+  font-size: 28px; /* 2x dari 14px - nama produk 2x lebih besar */
+  margin: 8px 0 4px;
+}
+
+.produk p {
+  font-size: 32px; /* 2x dari 16px - harga 2x lebih besar */
+  font-weight: bold;
+  color: #e60023;
+  margin: 0 0 8px;
+}
+
+.produk a {
+  margin-top: auto;
+  text-align: center;
+  background: #ee4d2d;
+  color: #fff;
+  text-decoration: none;
+  padding: 24px; /* 2x dari 12px - tinggi tombol 2x lebih besar */
+  border-radius: 8px;
+  font-size: 28px; /* 2x dari 14px - teks tombol 2x lebih besar */
+  font-weight: 600;
+}
+
+.produk a:hover {
+  background: #d43d1a;
+}
+
+/* ========================= PAGINATION ========================= */
+#pagination {
+  margin: 24px 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 12px;
+}
+
+#pagination button {
+  padding: 20px 32px; /* 2x dari 10px 16px - tinggi tombol pagination 2x lebih besar */
+  font-size: 28px; /* 2x dari 14px - teks pagination 2x lebih besar */
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  background: #fff;
+  cursor: pointer;
+}
+
+#pagination button:hover:not(:disabled) {
+  background: #f5f5f5;
+}
+
+#pagination button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+#pagination #pageInfo {
+  font-size: 28px; /* 2x lebih besar untuk info halaman */
+}
+
+/* ========================= TABLET - TETAP 2 KOLOM ========================= */
+@media screen and (max-width: 1024px) {
+  #produk-list {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 14px;
+  }
+
+  .produk img {
+    height: 220px;
+  }
+}
+
+/* ========================= MOBILE - TETAP 2 KOLOM ========================= */
+@media screen and (max-width: 768px) {
+  body {
+    padding: 14px;
+  }
+
+  .hero h1 {
+    font-size: 48px; /* Tetap besar di mobile */
+  }
+
+  .hero-sub {
+    font-size: 24px; /* Tetap besar di mobile */
+  }
+
+  .toolbar {
+    flex-direction: column;
+  }
+
+  /* Di mobile tetap full width karena layout vertical */
+  #search,
+  #sortHarga {
+    width: 100%;
+    padding: 24px; /* Tetap 2x lebih tinggi */
+    font-size: 28px; /* Tetap 2x lebih besar */
+  }
+
+  #produk-list {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+  }
+
+  .produk img {
+    height: 200px; /* Diperbesar dari 180px */
+  }
+
+  .produk h3 {
+    font-size: 24px; /* 2x dari original 12px mobile */
+  }
+
+  .produk p {
+    font-size: 28px; /* 2x dari original 14px mobile */
+  }
+
+  .produk a {
+    padding: 24px; /* 2x tinggi tombol */
+    font-size: 26px; /* 2x teks tombol */
+  }
+
+  #pagination button {
+    padding: 20px 28px;
+    font-size: 26px;
+  }
+
+  #pagination #pageInfo {
+    font-size: 24px;
+  }
+}
+
+/* ========================= EXTRA SMALL (IPHONE MINI) TETAP 2 KOLOM ========================= */
+@media screen and (max-width: 480px) {
+  .hero h1 {
+    font-size: 42px;
+  }
+
+  .hero-sub {
+    font-size: 22px;
+  }
+
+  #produk-list {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+  }
+
+  .produk img {
+    height: 170px; /* Diperbesar dari 150px */
+  }
+
+  .produk h3 {
+    font-size: 22px; /* 2x lebih besar */
+  }
+
+  .produk p {
+    font-size: 26px; /* 2x lebih besar */
+  }
+
+  .produk a {
+    padding: 22px; /* 2x tinggi tombol */
+    font-size: 24px; /* 2x teks tombol */
+  }
+
+  #pagination button {
+    padding: 18px 24px;
+    font-size: 24px;
+  }
+
+  #pagination #pageInfo {
+    font-size: 22px;
+  }
+}

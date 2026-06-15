@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <title>Affiliate Shopee</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="favicon.ico">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+</head>
+<body>
+
+<div class="hero">
+    <h1>Produk Rekomendasi</h1> 
+        <p class="hero-sub">
+            Temukan produk terbaik dengan harga termurah
+        </p>
+</div>
+
+
+<div class="toolbar">
+    <input type="text" id="search" placeholder="Cari produk...">
+
+    <select id="sortHarga">
+        <option value="">Urutkan</option>
+        <option value="asc">Harga Termurah</option>
+        <option value="desc">Harga Termahal</option>
+    </select>
+</div>
+
+<div id="produk-list"></div>
+
+<div id="pagination">
+    <button id="prevBtn">Prev</button>
+    <span id="pageInfo"></span>
+    <button id="nextBtn">Next</button>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
